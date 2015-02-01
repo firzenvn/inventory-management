@@ -1,0 +1,59 @@
+{
+	"name": "laravel/laravel",
+	"description": "The Laravel Framework.",
+	"keywords": ["framework", "laravel"],
+	"license": "MIT",
+	"require": {
+		"laravel/framework": "4.2.*",
+		"barryvdh/laravel-ide-helper": "1.*",
+		"way/generators": "2.6.1",
+		"regulus/activity-log": "dev-master",
+		"mnshankar/role-based-authority": "v1.4",
+		"frozennode/administrator": "dev-master",
+		"barryvdh/laravel-debugbar": "1.*",
+		"gregwar/captcha": "dev-master",
+		"pingpong/widget" : "1.0.*",
+		"barryvdh/laravel-elfinder": "0.1.x",
+        "chumper/datatable": "2.*",
+        "khill/lavacharts" : "dev-master"
+	},
+	"autoload": {
+		"classmap": [
+			"app/commands",
+			"app/controllers",
+			"app/models",
+			"app/models/api",
+			"app/database/migrations",
+			"app/database/seeds",
+			"app/tests/TestCase.php",
+            "app/exceptions.php",
+			"app/events.php"
+		]
+	},
+	"scripts": {
+		"post-install-cmd": [
+			"php artisan clear-compiled",
+			"php artisan optimize"
+		],
+		"post-update-cmd": [
+			"php artisan clear-compiled",
+			"php artisan optimize"
+		],
+		"post-create-project-cmd": [
+			"php artisan key:generate"
+		]
+	},
+	"config": {
+		"preferred-install": "dist"
+	},
+	"minimum-stability": "stable",
+	"repositories": [
+	    {
+	        "packagist": false
+	    },
+	    {
+	        "type": "composer",
+	        "url": "http://packagist.org/"
+	    }
+	]
+}
